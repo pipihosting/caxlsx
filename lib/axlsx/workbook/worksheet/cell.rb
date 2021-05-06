@@ -446,9 +446,9 @@ module Axlsx
     # @return [Symbol] The determined type
     def cell_type_from_value(v)
       if v.is_a?(Date)
-        :date
+        :string
       elsif v.is_a?(Time)
-        :time
+        :string
       elsif v.is_a?(TrueClass) || v.is_a?(FalseClass)
         :boolean
       elsif v.to_s =~ Axlsx::NUMERIC_REGEX && v.respond_to?(:to_i)
